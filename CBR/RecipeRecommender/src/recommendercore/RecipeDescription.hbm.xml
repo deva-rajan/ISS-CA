@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+<class name="recommendercore.RecipeDescription" table="recipe">
+	<id name="caseId" column="caseId" type="int"/>
+	<property name="CuisineType" column="CuisineType">
+	<type name="jcolibri.connector.databaseutils.EnumUserType">
+			<param name="enumClassName">recommendercore.RecipeDescription$CuisineType</param>
+		</type>
+	</property>
+	<property name="DietType" column="DietType">
+	<type name="jcolibri.connector.databaseutils.EnumUserType">
+			<param name="enumClassName">recommendercore.RecipeDescription$DietType</param>
+		</type>
+	</property>
+	<property name="MealType" column="MealType">
+		<type name="jcolibri.connector.databaseutils.EnumUserType">
+			<param name="enumClassName">recommendercore.RecipeDescription$MealType</param>
+		</type>
+	</property>
+	<property name="ingredients" column="ingredients" type="string"/>
+	<property name="dishName" column="dishName" type="string"/>
+	<property name="method" column="method" type="string"/>
+ </class>
+</hibernate-mapping>

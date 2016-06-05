@@ -1,0 +1,13 @@
+<TextFileConfiguration>
+	<FilePath>/home/deva/workspace/luna/RecipeRecommender/src/recommendercore/recipe.txt</FilePath>
+	<Delimiters>:</Delimiters>
+	<DescriptionClassName>recommendercore.RecipeDescription</DescriptionClassName>
+	<DescriptionMappings>
+		<Map>caseId</Map>
+		<Map>CuisineType</Map>
+		<Map>DietType</Map>
+		<Map>MealType</Map>	
+		<Map>ingredients</Map>	
+		<Map>dishName</Map>
+	</DescriptionMappings>
+</TextFileConfiguration>

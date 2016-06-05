@@ -1,0 +1,5 @@
+<DataBaseConfiguration>
+	<HibernateConfigFile>/home/deva/workspace/luna/RecipeRecommender/src/recommendercore/hibernate.cfg.xml</HibernateConfigFile>
+	<DescriptionMappingFile>/home/deva/workspace/luna/RecipeRecommender/src/recommendercore/RecipeDescription.hbm.xml</DescriptionMappingFile>
+	<DescriptionClassName>recommendercore.RecipeDescription</DescriptionClassName>
+</DataBaseConfiguration>
