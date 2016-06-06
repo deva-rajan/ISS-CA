@@ -10,6 +10,7 @@ public class RecipeDescription  implements CaseComponent {
 	public enum CuisineType {Indian,Malay,Thai,European}
     public enum DietType {Vegetarian,NonVegetarian}
     public enum MealType {Breakfast,Lunch,Dinner}
+    public enum Rating {ONE,TWO,THREE,FOUR,FIVE}
 	
     int caseId;
     CuisineType CuisineType;
@@ -18,8 +19,16 @@ public class RecipeDescription  implements CaseComponent {
     String method="dummy";
     String ingredients;
     String dishName;
-
+    Rating RatingScale;
        
+	public Rating getRatingScale() {
+		return RatingScale;
+	}
+
+	public void setRatingScale(Rating ratingScale) {
+		RatingScale = ratingScale;
+	}
+
 	public String getDishName() {
 		return dishName;
 	}
@@ -76,8 +85,6 @@ public class RecipeDescription  implements CaseComponent {
 		this.method = method;
 	}
 	
-	
-
 	@Override
 	public Attribute getIdAttribute() {
 		// TODO Auto-generated method stub

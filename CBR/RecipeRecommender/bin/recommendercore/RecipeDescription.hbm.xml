@@ -20,6 +20,11 @@
 	</property>
 	<property name="ingredients" column="ingredients" type="string"/>
 	<property name="dishName" column="dishName" type="string"/>
+	<property name="RatingScale" column="Rating">
+		<type name="jcolibri.connector.databaseutils.EnumUserType">
+			<param name="enumClassName">recommendercore.RecipeDescription$Rating</param>
+		</type>
+	</property>
 	<property name="method" column="method" type="string"/>
  </class>
 </hibernate-mapping>
