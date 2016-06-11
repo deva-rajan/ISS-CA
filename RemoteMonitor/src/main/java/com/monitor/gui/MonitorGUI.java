@@ -3,7 +3,6 @@ package com.monitor.gui;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -17,30 +16,36 @@ public class MonitorGUI {
 	static JTable tableLoad;
 	static DefaultTableModel modelLoad;
 	
+	static JFrame frame;
+	
 	public void configureFrame(){
 		
-		JFrame frame = new JFrame();
+		frame = new JFrame();
 		
 		JTabbedPane tabbedPane = new JTabbedPane();
 		JPanel lampsPanel = new JPanel();
 		modelLamp = new DefaultTableModel(); 
 		
+		modelLamp.addColumn("Time");
 		modelLamp.addColumn("Address"); 
 		modelLamp.addColumn("Pincode"); 
 		modelLamp.addColumn("LampId");
 		
 		tableLamp = new JTable(modelLamp); 
+		
 		tableLamp.getColumnModel().getColumn(0).setPreferredWidth(200);
-		tableLamp.getColumnModel().getColumn(1).setPreferredWidth(100);
+		tableLamp.getColumnModel().getColumn(1).setPreferredWidth(200);
 		tableLamp.getColumnModel().getColumn(2).setPreferredWidth(100);
+		tableLamp.getColumnModel().getColumn(3).setPreferredWidth(100);
 	
 		lampsPanel.add(tableLamp.getTableHeader());
 		lampsPanel.add(tableLamp,BorderLayout.CENTER);
 		
 		JPanel electricityLoadPanel = new JPanel();
 		modelLoad = new DefaultTableModel();
-		modelLoad = new DefaultTableModel(); 
+		modelLoad = new DefaultTableModel();
 		
+		modelLoad.addColumn("Time");
 		modelLoad.addColumn("Address"); 
 		modelLoad.addColumn("Pincode"); 
 		modelLoad.addColumn("TransformerId");
@@ -48,9 +53,10 @@ public class MonitorGUI {
 		tableLoad = new JTable(modelLoad); 
 		
 		tableLoad.getColumnModel().getColumn(0).setPreferredWidth(200);
-		tableLoad.getColumnModel().getColumn(1).setPreferredWidth(100);
+		tableLoad.getColumnModel().getColumn(1).setPreferredWidth(200);
 		tableLoad.getColumnModel().getColumn(2).setPreferredWidth(100);
 		tableLoad.getColumnModel().getColumn(3).setPreferredWidth(100);
+		tableLoad.getColumnModel().getColumn(4).setPreferredWidth(100);
 		
 		electricityLoadPanel.add(tableLoad.getTableHeader());
 		electricityLoadPanel.add(tableLoad,BorderLayout.CENTER);

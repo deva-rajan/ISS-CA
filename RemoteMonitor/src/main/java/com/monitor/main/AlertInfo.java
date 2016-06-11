@@ -5,11 +5,21 @@ public class AlertInfo {
 	private int sensorId;
 	private int value;
 	private RaspberryPi pi;
+	private String dateTime;
 	
-	public AlertInfo(int sensorId, int value, RaspberryPi pi) {
+	public String getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
+
+	public AlertInfo(int sensorId, int value, RaspberryPi pi,String dateTime) {
 		this.sensorId=sensorId;
 		this.value=value;
 		this.pi=pi;
+		this.dateTime=dateTime;
 	}
 
 	public int getSensorId() {

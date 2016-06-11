@@ -3,8 +3,9 @@ package com.monitor.main;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+import java.util.Queue;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
@@ -17,9 +18,9 @@ import com.monitor.util.MailWorker;
 public class MonitorMain {
 	
 	public static HashMap<Integer,RaspberryPi> piMap = new HashMap<Integer,RaspberryPi>();
-	public static Stack<AlertInfo> infoStackLamp = new Stack<AlertInfo>();
+	public static Queue<AlertInfo> infoQueueLamp = new LinkedList<AlertInfo>();
 	public static List<AlertInfo> infoListLamp = Collections.synchronizedList(new ArrayList<AlertInfo>());
-	public static Stack<AlertInfo> infoStackLoad = new Stack<AlertInfo>();
+	public static Queue<AlertInfo> infoQueueLoad = new LinkedList<AlertInfo>();
 	
 	private static void buildPiMap(){
 		RaspberryPi pi1 = new RaspberryPi(1001,120274,"Clementi WestStreet2",'l');
@@ -42,11 +43,11 @@ public class MonitorMain {
 		buildPiMap();
 		//Start Mail Workers
         Timer timer = new Timer();
-        timer.schedule(new MailWorker(),TimeUnit.MINUTES.toMillis(5));
+        timer.schedule(new MailWorker(),0,TimeUnit.MINUTES.toMillis(5));
         
-        //Start GUI refresher
+        //Start GUI refresher	
         Timer guiTimer = new Timer();
-        guiTimer.schedule(new RefreshGUI(), TimeUnit.MINUTES.toMillis(1));
+        guiTimer.schedule(new RefreshGUI(), 0,TimeUnit.SECONDS.toMillis(5));
 		//Start Jetty Server
 		Server server = new Server(8080);
         server.setHandler(new RequestHandler()); 

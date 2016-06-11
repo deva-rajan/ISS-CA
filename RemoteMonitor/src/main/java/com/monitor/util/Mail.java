@@ -25,7 +25,7 @@ public class Mail {
 	    mailMessage.append("\n");
 	    mailMessage.append("\n");
 		for(String message:messageList){
-			String[] splittedString = message.split("+");
+			String[] splittedString = message.split(",");
 			mailMessage.append("Address: "+splittedString[0]);
 			mailMessage.append("  ");
 			mailMessage.append("Pincode: "+splittedString[1]);
@@ -44,7 +44,7 @@ public class Mail {
 	    mailMessage.append("The Following Transformer Experienced Heavy Load Recently:");
 	    mailMessage.append("\n");
 	    mailMessage.append("\n");
-		String[] splittedString = message.split("+");
+		String[] splittedString = message.split(",");
 		mailMessage.append("Address: "+splittedString[0]);
 		mailMessage.append("  ");
 		mailMessage.append("Pincode: "+splittedString[1]);
